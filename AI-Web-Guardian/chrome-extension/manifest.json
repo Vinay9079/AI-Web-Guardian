@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "AI Web Guardian",
+  "version": "1.0",
+  "description": "AI Chrome Extension that protects you from harmful and addictive content.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "webRequest",
+    "notifications",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  }
+}
